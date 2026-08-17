@@ -1,0 +1,157 @@
+{
+  "best_model": "Random Forest",
+  "models": {
+    "Logistic Regression": {
+      "accuracy": 0.8727,
+      "precision": 0.873,
+      "recall": 0.8276,
+      "f1": 0.8497,
+      "confusion_matrix": [
+        [
+          12020,
+          1226
+        ],
+        [
+          1756,
+          8429
+        ]
+      ],
+      "train_time_s": 0.07
+    },
+    "Random Forest": {
+      "accuracy": 0.9617,
+      "precision": 0.976,
+      "recall": 0.9348,
+      "f1": 0.955,
+      "confusion_matrix": [
+        [
+          13012,
+          234
+        ],
+        [
+          664,
+          9521
+        ]
+      ],
+      "train_time_s": 1.09
+    }
+  },
+  "feature_importance": [
+    {
+      "feature": "In-flight Wifi Service",
+      "importance": 0.131456
+    },
+    {
+      "feature": "Online Boarding",
+      "importance": 0.12922
+    },
+    {
+      "feature": "Class_Business",
+      "importance": 0.090718
+    },
+    {
+      "feature": "Type of Travel_Personal",
+      "importance": 0.068855
+    },
+    {
+      "feature": "Seat Comfort",
+      "importance": 0.056502
+    },
+    {
+      "feature": "In-flight Entertainment",
+      "importance": 0.052653
+    },
+    {
+      "feature": "Type of Travel_Business",
+      "importance": 0.050213
+    },
+    {
+      "feature": "Ease of Online Booking",
+      "importance": 0.038317
+    },
+    {
+      "feature": "Class_Economy",
+      "importance": 0.033289
+    },
+    {
+      "feature": "On-board Service",
+      "importance": 0.032285
+    },
+    {
+      "feature": "Flight Distance",
+      "importance": 0.029634
+    },
+    {
+      "feature": "Customer Type_Returning",
+      "importance": 0.029005
+    },
+    {
+      "feature": "Age",
+      "importance": 0.028933
+    },
+    {
+      "feature": "Customer Type_First-time",
+      "importance": 0.028648
+    },
+    {
+      "feature": "Leg Room Service",
+      "importance": 0.027473
+    }
+  ],
+  "feature_columns": [
+    "Gender",
+    "Customer Type",
+    "Type of Travel",
+    "Class",
+    "Age",
+    "Flight Distance",
+    "Departure Delay",
+    "Arrival Delay",
+    "Departure and Arrival Time Convenience",
+    "Ease of Online Booking",
+    "Check-in Service",
+    "Online Boarding",
+    "Gate Location",
+    "On-board Service",
+    "Seat Comfort",
+    "Leg Room Service",
+    "Cleanliness",
+    "Food and Drink",
+    "In-flight Service",
+    "In-flight Wifi Service",
+    "In-flight Entertainment",
+    "Baggage Handling"
+  ],
+  "categorical_features": [
+    "Gender",
+    "Customer Type",
+    "Type of Travel",
+    "Class"
+  ],
+  "numerical_features": [
+    "Age",
+    "Flight Distance",
+    "Departure Delay",
+    "Arrival Delay",
+    "Departure and Arrival Time Convenience",
+    "Ease of Online Booking",
+    "Check-in Service",
+    "Online Boarding",
+    "Gate Location",
+    "On-board Service",
+    "Seat Comfort",
+    "Leg Room Service",
+    "Cleanliness",
+    "Food and Drink",
+    "In-flight Service",
+    "In-flight Wifi Service",
+    "In-flight Entertainment",
+    "Baggage Handling"
+  ],
+  "target_classes": {
+    "1": "Satisfied",
+    "0": "Neutral or Dissatisfied"
+  },
+  "test_size": 23431,
+  "train_size": 93720
+}

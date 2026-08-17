@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: skymetrics-backend
+    ports:
+      - "5001:5001"
+    environment:
+      - FLASK_HOST=0.0.0.0
+      - FLASK_PORT=5001
+      - FLASK_ENV=production
+      - FRONTEND_URL=http://localhost:5173
+      # We explicitly use skymetrics.db to write to the bound volume
+      - DB_PATH=/app/data/skymetrics.db
+    volumes:
+      - backend_data:/app/data
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Connect to localhost:5001 since the user runs browser on localhost
+        - VITE_API_URL=http://localhost:5001/api
+    container_name: skymetrics-frontend
+    ports:
+      - "5173:80" # Map 5173 to Nginx 80 so it matches existing dev URL exactly
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  backend_data:

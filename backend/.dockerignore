@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+classifier_backup.joblib
+models/temp_cand.joblib
