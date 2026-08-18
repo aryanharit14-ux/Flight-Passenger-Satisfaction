@@ -13,4 +13,4 @@ COPY . .
 EXPOSE 5001
 
 # Command to run Gunicorn
-CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:$PORT --workers 2 --timeout 120 app:app"]
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:5001 --workers 2 --timeout 120 app:app"]
