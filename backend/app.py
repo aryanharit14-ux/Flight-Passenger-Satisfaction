@@ -38,7 +38,11 @@ import db
 app = Flask(__name__)
 
 frontend_url = os.environ.get("FRONTEND_URL", "http://localhost:5173")
-CORS(app, origins=[frontend_url, "http://127.0.0.1:5173"])
+CORS(app, origins=[
+    "http://localhost:5173", 
+    "http://127.0.0.1:5173", 
+    "https://flight-passenger-satisfaction-6rhu.vercel.app"
+])
 
 SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
 MODELS_DIR  = os.path.join(SCRIPT_DIR, "models")
